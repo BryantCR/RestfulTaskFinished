@@ -1,0 +1,15 @@
+<button type="button" (click)="displayAllTasks()">
+GET ALL TASKS
+</button>
+
+<div *ngFor="let task of alltasks" class="task">
+    {{task.title}}
+    <form (submit)="findTask($event)">
+        <input type="hidden" value="{{task.title}}" id="title">
+        <button type="submit">
+            SHOW
+        </button>
+    </form>
+</div>
+
+<app-task [task] = "task"></app-task>
